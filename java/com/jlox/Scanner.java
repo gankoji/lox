@@ -24,7 +24,7 @@ class Scanner {
             scanToken();
         }
 
-        tokens.add(newToken(EOF, "", null, line));
+        tokens.add(new Token(EOF, "", null, line));
         return tokens;
     }
 
@@ -94,7 +94,7 @@ class Scanner {
                 string();
                 break;
             default:
-                Lox.error(line, "Unexpeted character.");
+                Lox.error(line, "Unexpected character.");
                 break;
         }
     }
@@ -143,7 +143,7 @@ class Scanner {
         return source.charAt(current++);
     }
 
-    private void addToken(TokeType type) {
+    private void addToken(TokenType type) {
         addToken(type, null);
     }
 
