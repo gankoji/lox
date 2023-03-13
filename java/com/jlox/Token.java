@@ -1,7 +1,5 @@
 package com.jlox;
 
-import com.jlox.TokenType;
-
 class Token {
     final TokenType type;
     final String lexeme;
