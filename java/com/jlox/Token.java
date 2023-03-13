@@ -1,4 +1,6 @@
-package com.jlox.lox;
+package com.jlox;
+
+import com.jlox.TokenType;
 
 class Token {
     final TokenType type;

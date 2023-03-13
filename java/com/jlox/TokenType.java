@@ -1,4 +1,4 @@
-package com.jlox.lox;
+package com.jlox;
 
 enum TokenType {
     // Single-character tokens.
