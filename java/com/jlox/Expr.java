@@ -1,20 +1,21 @@
 package com.jlox;
 
-import java.util.List;
-
 abstract class Expr {
   interface Visitor<R> {
     R visitBinaryExpr(Binary expr);
+
     R visitGroupingExpr(Grouping expr);
+
     R visitLiteralExpr(Literal expr);
+
     R visitUnaryExpr(Unary expr);
   }
 
   static class Binary extends Expr {
     Binary(Expr left, Token operator, Expr right) {
-        this.left = left;
-        this.operator = operator;
-        this.right = right;
+      this.left = left;
+      this.operator = operator;
+      this.right = right;
     }
 
     @Override
@@ -29,7 +30,7 @@ abstract class Expr {
 
   static class Grouping extends Expr {
     Grouping(Expr expression) {
-        this.expression = expression;
+      this.expression = expression;
     }
 
     @Override
@@ -42,7 +43,7 @@ abstract class Expr {
 
   static class Literal extends Expr {
     Literal(Object value) {
-        this.value = value;
+      this.value = value;
     }
 
     @Override
@@ -55,8 +56,8 @@ abstract class Expr {
 
   static class Unary extends Expr {
     Unary(Token operator, Expr right) {
-        this.operator = operator;
-        this.right = right;
+      this.operator = operator;
+      this.right = right;
     }
 
     @Override
@@ -68,5 +69,5 @@ abstract class Expr {
     final Expr right;
   }
 
-  abstract <R> R accept (Visitor<R> visitor);
+  abstract <R> R accept(Visitor<R> visitor);
 }
